@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using dotnet_rpg.Models;
+using dotnet_rpg.Services.CharacterService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_rpg.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CharacterController : ControllerBase 
-    {
-        private static List<Character> characters = new List<Character>
+    public class CharacterController : ControllerBase
+    { 
+        private readonly ICharacterService _characterService;
+
+        public CharacterController(ICharacterService characterService)
         {
-            new Character(),
-            new Character { Id = 1, Name = "Sam"}
-        };
+            _characterService =  characterService;
+        }
 
         // https://localhost:5001/Character/GetAll
 
         [HttpGet("GetAll")]
         public ActionResult<List<Character>> Get()
         {
-            return Ok(characters);
+            return Ok(_characterService.GetAllCharacters());
         }
 
        // https://localhost:5001/Character/{id}
@@ -29,14 +31,14 @@ namespace dotnet_rpg.Controllers
         [HttpGet("{id}")]
         public ActionResult<Character> GetSingle(int id)
         {
-            return Ok(characters.FirstOrDefault(c => c.Id == id));
+            return Ok(_characterService.GetCharacterById(id));
         }
 
         [HttpPost]
         public ActionResult<List<Character>> AddCharacter(Character newCharacter)
         {
-            characters.Add(newCharacter);
-            return Ok(characters);
+           
+            return Ok(_characterService.AddCharacter(newCharacter));
         }
 
     }
