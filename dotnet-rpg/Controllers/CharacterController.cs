@@ -18,9 +18,16 @@ namespace dotnet_rpg.Controllers
         // https://localhost:5001/characters
 
         [HttpGet]
+        [Route("GetAll")]
         public ActionResult<List<Character>> Get()
         {
             return Ok(characters);
+        }
+
+        [HttpGet]
+        public ActionResult<Character> GetSingle()
+        {
+            return Ok(characters[0]);
         }
 
     }
