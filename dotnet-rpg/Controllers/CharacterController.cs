@@ -24,7 +24,7 @@ namespace dotnet_rpg.Controllers
         [HttpGet("GetAll")]
         public async Task<ActionResult<List<Character>>> Get()
         {
-            return Ok(_characterService.GetAllCharacters());
+            return Ok(await _characterService.GetAllCharacters());
         }
 
        // https://localhost:5001/Character/{id}
@@ -32,14 +32,14 @@ namespace dotnet_rpg.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Character>> GetSingle(int id)
         {
-            return Ok(_characterService.GetCharacterById(id));
+            return Ok(await _characterService.GetCharacterById(id));
         }
 
         [HttpPost]
         public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter)
         {
            
-            return Ok(_characterService.AddCharacter(newCharacter));
+            return Ok(await _characterService.AddCharacter(newCharacter));
         }
 
     }
