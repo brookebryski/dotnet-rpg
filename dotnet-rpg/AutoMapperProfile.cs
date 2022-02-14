@@ -1,5 +1,8 @@
 ﻿using System;
 using AutoMapper;
+using dotnet_rpg.DTOs.Character;
+using dotnet_rpg.Models;
+
 namespace dotnet_rpg
 {
     public class AutoMapperProfile : Profile
@@ -7,6 +10,7 @@ namespace dotnet_rpg
         public AutoMapperProfile()
         {
             CreateMap<Character, GetCharacterDto>();
+            CreateMap<AddCharacterDto, Character>();
         }
     }
 }
