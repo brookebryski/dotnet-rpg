@@ -1,21 +1,16 @@
 ﻿<Properties StartupConfiguration="{65769376-ACC6-4E3A-8C08-CB88A3A8F2FF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-rpg/Controllers/CharacterController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-rpg/AutoMapperProfile.cs">
     <Files>
-      <File FileName="dotnet-rpg/DTOs/Character/AddCharacterDto.cs" Line="19" Column="21" />
-      <File FileName="dotnet-rpg/Services/CharacterService/ICharacterService.cs" Line="18" Column="1" />
-      <File FileName="dotnet-rpg/Services/CharacterService/CharacterService.cs" Line="35" Column="70" />
-      <File FileName="dotnet-rpg/Controllers/CharacterController.cs" Line="28" Column="70" />
+      <File FileName="dotnet-rpg/Startup.cs" Line="14" Column="13" />
+      <File FileName="dotnet-rpg/Services/CharacterService/CharacterService.cs" Line="49" Column="1" />
+      <File FileName="dotnet-rpg/AutoMapperProfile.cs" Line="4" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotnet-rpg" expanded="True">
             <Node name="dotnet-rpg" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="CharacterController.cs" selected="True" />
-              </Node>
-              <Node name="DTOs" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="AutoMapperProfile.cs" selected="True" />
             </Node>
           </Node>
         </State>

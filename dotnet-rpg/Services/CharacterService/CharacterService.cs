@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using dotnet_rpg.DTOs.Character;
 using dotnet_rpg.Models;
+using AutoMapper;
 
 namespace dotnet_rpg.Services.CharacterService
 {
@@ -15,25 +16,32 @@ namespace dotnet_rpg.Services.CharacterService
             new Character { Id = 1, Name = "Sam"}
         };
 
+        private readonly IMapper _mapper;
+
+        public CharacterService(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
         public async Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
         {
             var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-            characters.Add(newCharacter);
-            serviceResponse.Data = characters;
+            characters.Add(_mapper.Map<Character>(newCharacter));
+            serviceResponse.Data = characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
             return serviceResponse;
         }
 
         public async Task<ServiceResponse<List<Character>>> GetAllCharacters()
         {
             var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-            serviceResponse.Data = characters;
+            serviceResponse.Data = characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
             return serviceResponse;
         }
 
         public async Task<ServiceResponse<Character>> GetCharacterById(int id)
         {
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
-            serviceResponse.Data = characters.FirstOrDefault(c => c.Id == id);
+            serviceResponse.Data = _mapper.Map<GetCharacterDto>(characters.FirstOrDefault(c => c.Id == id));
             return serviceResponse;
         }
     }
