@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{65769376-ACC6-4E3A-8C08-CB88A3A8F2FF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-rpg/Data/DataContent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-rpg/appsettings.json">
     <Files>
       <File FileName="dotnet-rpg/Controllers/CharacterController.cs" Line="4" Column="17" />
-      <File FileName="dotnet-rpg/Data/DataContent.cs" Line="6" Column="8" />
+      <File FileName="dotnet-rpg/Data/DataContent.cs" Line="13" Column="21" />
+      <File FileName="dotnet-rpg/appsettings.json" Line="3" Column="102" />
+      <File FileName="dotnet-rpg/Startup.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotnet-rpg" expanded="True">
             <Node name="dotnet-rpg" expanded="True">
-              <Node name="Data" expanded="True">
-                <Node name="DataContent.cs" selected="True" />
-              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
