@@ -62,7 +62,7 @@ namespace dotnet_rpg.Services.CharacterService
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
             try
             {
-                Character character = characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
+                Character character = await _context.Characters.FirstOrDefaultAsync(c => c.Id == updatedCharacter.Id);
 
                 character.Name = updatedCharacter.Name;
                 character.HitPoints = updatedCharacter.HitPoints;
@@ -70,6 +70,8 @@ namespace dotnet_rpg.Services.CharacterService
                 character.Defense = updatedCharacter.Defense;
                 character.Intelligence = updatedCharacter.Intelligence;
                 character.Class = updatedCharacter.Class;
+
+                await _context.SaveChangesAsync();
 
                 serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             }
