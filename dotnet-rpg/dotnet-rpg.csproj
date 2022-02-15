@@ -12,6 +12,7 @@
     <None Remove="Services\CharacterService\" />
     <None Remove="DTOs\" />
     <None Remove="DTOs\Character\" />
+    <None Remove="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -19,5 +20,9 @@
     <Folder Include="Services\CharacterService\" />
     <Folder Include="DTOs\" />
     <Folder Include="DTOs\Character\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 </Project>

@@ -7,9 +7,6 @@ using dotnet_rpg.Models;
 using dotnet_rpg.Services.CharacterService;
 using Microsoft.AspNetCore.Mvc;
 
-// Questions for Lord Charles:
-// 
-// 
 namespace dotnet_rpg.Controllers
 {
     [ApiController]
